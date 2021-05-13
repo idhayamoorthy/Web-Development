@@ -1,0 +1,198 @@
+<html>
+
+<head>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+
+<style>
+
+body
+{
+background-image:url("1.jpeg");
+background-size:cover;
+
+}
+
+h2
+{
+font-size:50px;
+margin-top:50px;
+}
+
+h1
+{
+padding-top:10px;
+color:black;
+}
+
+#start
+{
+
+width:400px;
+height:430px;
+background:rgba(255,255,255,0.8);
+}
+
+#use
+{
+font-size:30px;
+color:black;
+}
+
+#u input
+{
+margin-left:10px;
+font-size:23px;
+color:black;
+outline:none;
+border-top:none;
+border-left:none;
+border-right:none;
+border-bottom:2px solid black;
+background:transparent;
+}
+
+#u i
+{
+font-size:30px;
+}
+
+#pass
+{
+font-size:30px;
+color:black;
+}
+
+#p input
+{
+margin-left:10px;
+font-size:23px;
+color:black;
+outline:none;
+border-top:none;
+border-left:none;
+border-right:none;
+border-bottom:2px solid black;
+background:transparent;
+}
+
+#p i
+{
+font-size:30px;
+}
+
+#toggle
+{
+cursor:pointer;
+}
+
+#sub input
+{
+margin-left:40px;
+outline:none;
+border:none;
+width:300px;
+height:40px;
+background-color:#f87217;
+border-radius:5px;
+font-size:23px;
+margin-top:20px;
+cursor:pointer;
+}
+
+#f
+{
+margin-left:40px;
+font-size:23px;
+color:black;
+}
+
+#f a
+{
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+<body >
+
+<center>
+
+<form action="login.php" method="POST" onsubmit="return show(this)"  >
+
+<h2> Tele-Medicine </h2>
+
+<div id="start">
+
+<h1> Login  </h1>
+
+<div id="use"> E-mail </div>
+<p  id="u"> 
+<i class="far fa-envelope"></i>  <input  type="email" name="email" maxlength="35" id="data" autocomplete="off" required>
+ </p>
+
+<div id="pass"> Password </div>
+<p  id="p"> 
+<i class="fas fa-lock"> </i> <input type="password" name="password"  maxlength="15" autocomplete="off" id="myinput" required>
+<p> <input type="checkbox" onclick="myfunction()" id="toggle"> Show password </p>
+</p>
+
+<p id ="sub" > 
+<input  type="submit" name="submit"  value="Submit" onclick="show()"  >  
+</p>
+
+<p id="f"> 
+Create an account click -  <a href="reg.html" target="_blank"> Register </a> 
+</p>
+
+</div>
+
+</form>
+
+</center>
+
+<script>
+
+function myfunction()
+{
+var c = document.getElementById("myinput");
+if(c.type == "password")
+{
+c.type="text";
+}
+else
+{
+c.type="password";
+}
+}
+
+function show(form)
+{
+var a = /^[a-z0-9@.]+$/ ;
+
+if(!a.test(form.email.value))
+{
+alert("Email - Enter email address");
+return false;
+}
+
+var d = /^[a-z0-9]+$/ ;
+
+if(!d.test(form.password.value))
+{
+alert("Password - Enter only small letters and numbers");
+return false;
+}
+
+return true;
+
+}
+
+</script>
+
+
+</body>
+
+</html>
