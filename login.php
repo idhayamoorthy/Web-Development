@@ -28,7 +28,7 @@ if (isset($_POST['email'])){
     if($rows==1)
     {
         $_SESSION['email'] = $email;
-            // Redirect user to index.php
+            // Redirect user to dashboard page
      header("Location:dashboard.php");
  }
     else{
