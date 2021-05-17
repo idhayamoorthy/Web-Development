@@ -19,7 +19,6 @@ if (isset($_POST['email'])){
  $email = mysqli_real_escape_string($conn,$email);
  $password = stripslashes($_REQUEST['password']);
  $password = mysqli_real_escape_string($conn,$password);
- //Checking is user existing in the database or not
  $query = "SELECT * FROM `register` WHERE email='$email'and password='$password'";
  $result = mysqli_query($conn,$query) or die(mysql_error());
  $rows = mysqli_num_rows($result);
