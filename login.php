@@ -15,9 +15,7 @@ if (mysqli_connect_error()){
 session_start();
 
 if (isset($_POST['email'])){
-        // removes backslashes
-    $email = stripslashes($_REQUEST['email']);
-        //escapes special characters in a string
+ $email = stripslashes($_REQUEST['email']);
  $email = mysqli_real_escape_string($conn,$email);
  $password = stripslashes($_REQUEST['password']);
  $password = mysqli_real_escape_string($conn,$password);
@@ -25,11 +23,10 @@ if (isset($_POST['email'])){
  $query = "SELECT * FROM `register` WHERE email='$email'and password='$password'";
  $result = mysqli_query($conn,$query) or die(mysql_error());
  $rows = mysqli_num_rows($result);
-    if($rows==1)
+    if($rows==0)
     {
         $_SESSION['email'] = $email;
-            // Redirect user to dashboard page
-     header("Location:dashboard.php");
+        header("Location:dashboard.php");
  }
     else{
      echo "
